@@ -1,0 +1,14 @@
+<launch>
+    <!-- 启动 turtlesim -->
+    <node name="turtlesim" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+    
+    <!-- 设置全局参数：周期和幅值 -->
+    <param name="turtle_period" type="double" value="2.0" />
+    <param name="turtle_amplitude" type="double" value="1.0" />
+    
+    <!-- 启动你的控制节点 -->
+    <node name="circle_controller" pkg="turtle_circle" type="circle_controller.py" output="screen"/>
+    
+    <!-- 录制 bag -->
+    <node name="record_bag" pkg="rosbag" type="record" args="/turtle1/cmd_vel /turtle1/pose -O /home/xj/catkin_ws/src/turtle_circle/bag/turtle.bag" output="screen"/>
+</launch>
