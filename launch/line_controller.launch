@@ -1,0 +1,13 @@
+<launch>
+    <!-- 启动 turtlesim -->
+    <node name="turtlesim" pkg="turtlesim" type="turtlesim_node" output="screen"/>
+    
+    <!-- 参数配置 -->
+    <param name="target_y" type="double" value="18.0" />
+    <param name="linear_velocity" type="double" value="0.5" />
+    <param name="K_y" type="double" value="0.5" />
+    <param name="K_theta" type="double" value="1.0" />
+    
+    <!-- 启动直线控制器节点 -->
+    <node name="line_controller" pkg="turtle_circle" type="line_controller.py" output="screen"/>
+</launch>

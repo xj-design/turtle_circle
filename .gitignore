@@ -1,4 +1,20 @@
+# ROS1 / catkin
 build/
 devel/
-bag/
-*.bag
+build_isolated/
+devel_isolated/
+*.pyc
+__pycache__/
+.catkin
+
+# ROS2 / colcon
+install/
+log/
+
+# IDE
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+*.swp
